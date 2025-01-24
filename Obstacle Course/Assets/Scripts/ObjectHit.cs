@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {
+    const string PLAYER = "Player";
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Bumped into a wall");
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        if (other.gameObject.tag == PLAYER)
+            GetComponent<MeshRenderer>().material.color = Color.red;
+        gameObject.tag = "Hit";
     }
 }
