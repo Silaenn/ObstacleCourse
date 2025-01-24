@@ -11,6 +11,11 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
+        MovePlayer();
+    }
+
+    void MovePlayer()
+    {
         float xValue = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         float zValue = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
